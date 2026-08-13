@@ -312,7 +312,7 @@ with col1:
         perf_df,
         x="Faculty",
         y="Graduate Outcome %",
-        color="Placement Rate",
+        color="Graduate Outcome %",
         text_auto=".1f",
         color_continuous_scale="Viridis"
     )
@@ -420,7 +420,7 @@ if selected_year == "All Years":
         heat_df,
         x="Year",
         y="Faculty",
-        z="Placement Rate",
+        z="Graduate Outcome %",
         color_continuous_scale="RdYlGn"
     )
 
@@ -439,14 +439,14 @@ st.subheader("Executive Insights")
 
 rank_df = filtered_df.copy()
 
-rank_df["Placement Rate"] = (
+rank_df["Graduate Outcome %"] = (
     rank_df["Placed"]
     /
     rank_df["Graduates"]
 ) * 100
 
 rank_df = rank_df.sort_values(
-    "Placement Rate",
+    "Graduate Outcome %",
     ascending=False
 )
 
